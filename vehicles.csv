@@ -1,5 +1,5 @@
-name,number plate,company
-John Doe,KA01AB1234,Acme Corp
-Jane Smith,MH12CD5678,Global Inc
-Alice Johnson,DL03EF9012,Tech Solutions
-Bob Brown,GJ05GH3456,Logistics Ltd
+name,number plate,company,purpose
+John Doe,KA01AB1234,Acme Corp,Delivery
+Jane Smith,MH12CD5678,Global Inc,Meeting
+Alice Johnson,DL03EF9012,Tech Solutions,Consulting
+Bob Brown,GJ05GH3456,Logistics Ltd,Transport
