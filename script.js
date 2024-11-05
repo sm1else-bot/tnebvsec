@@ -2,8 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('vehicles.csv')
         .then(response => response.text())
         .then(data => {
+            console.log("CSV data loaded:");
+            console.log(data);  // Debug: Show raw CSV data
             window.vehicleData = parseCSV(data);
-        });
+            console.log("Parsed vehicle data:");
+            console.log(window.vehicleData);  // Debug: Show parsed CSV data
+        })
+        .catch(error => console.error("Error loading CSV:", error));  // Debug: Handle CSV loading error
 });
 
 function parseCSV(data) {
@@ -13,14 +18,14 @@ function parseCSV(data) {
         const values = line.split(',');
         let entry = {};
         headers.forEach((header, index) => {
-            entry[header.trim()] = values[index].trim();
+            entry[header.trim()] = values[index] ? values[index].trim() : "";  // Handle missing values
         });
         return entry;
     });
 }
 
 function checkRegistration() {
-    const input = document.getElementById('number-plate').value;
+    const input = document.getElementById('number-plate').value.trim();
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
 
@@ -29,9 +34,12 @@ function checkRegistration() {
         return;
     }
 
+    console.log("User input:", input);  // Debug: Show user input
     const results = window.vehicleData.filter(vehicle => 
-        vehicle['number plate'].endsWith(input)
+        vehicle['number plate'] && vehicle['number plate'].endsWith(input)
     );
+
+    console.log("Filtered results:", results);  // Debug: Show matching results
 
     if (results.length > 0) {
         resultsContainer.innerHTML = `<p class="match-found">Vehicle Match Found</p>` +
