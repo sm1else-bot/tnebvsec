@@ -29,15 +29,16 @@ function checkRegistration() {
         vehicle['number plate'].endsWith(input)
     );
     if (results.length > 0) {
-        resultsContainer.innerHTML = `<p class="match-found">Vehicle Match Found</p>` +
-        results.map(vehicle => `
-            <p>Name: ${vehicle.name}</p>
-            <p>Number Plate: ${vehicle['number plate']}</p>
-            <p>Company: ${vehicle.company}</p>
-            <p>Purpose: ${vehicle.purpose}</p>
-            <hr>
-        `).join('');
+        resultsContainer.innerHTML = '<p class="match-found">Vehicle Match Found</p>' +
+            results.map(vehicle => `
+                <p>Name: ${vehicle.name}</p>
+                <p>Number Plate: ${vehicle['number plate']}</p>
+                <p>Company: ${vehicle.company}</p>
+                <p>Purpose: ${vehicle.purpose}</p>
+                <hr>
+            `).join('');
     } else {
         resultsContainer.innerHTML = '<p class="no-match">No matching vehicle found.</p>';
     }
 }
+
