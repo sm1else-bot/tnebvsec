@@ -15,6 +15,17 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            position: relative;
+        }
+        .header-text {
+            font-size: 1.2em;
+            color: #002c78;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .logo {
+            width: 150px;
+            margin-top: 10px; /* Adjust margin-top for logo positioning */
         }
         .container {
             width: 90%;
@@ -24,11 +35,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            margin-top: 20px; /* Add margin-top to move container below logo */
-        }
-        .logo {
-            width: 150px;
-            margin-top: 20px; /* Adjust margin-top to center logo */
+            margin-top: 20px; /* Move container below logo */
         }
         .input-group {
             margin-bottom: 20px;
@@ -71,10 +78,19 @@
             color: red;
             font-weight: bold;
         }
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9em;
+            color: lightgrey;
+            text-align: center;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
+<h4 class="header-text">::TNPGCL::<br>North Chennai Thermal Power Station<br>Stage - III, Chennai - 120</h4>
 <img src="logo.jpeg" alt="TANGEDCO Logo" class="logo">
 
 <div class="container">
@@ -87,6 +103,8 @@
     </div>
     <div class="results" id="results"></div>
 </div>
+
+<div class="watermark">Powered by Jessenth</div>
 
 <script src="script.js"></script>
 </body>
