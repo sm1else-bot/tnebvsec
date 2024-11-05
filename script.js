@@ -39,7 +39,7 @@ function checkRegistration() {
             <p>Name: ${vehicle.name}</p>
             <p>Number Plate: ${vehicle['number plate']}</p>
             <p>Company: ${vehicle.company}</p>
-            <p>Vehicle Type: ${vehicle.type}</p>
+            <p>Vehicle Type: ${vehicle.purpose}</p>
             <hr>
         `).join('');
     } else {
